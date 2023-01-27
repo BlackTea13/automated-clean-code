@@ -23,7 +23,7 @@ def test_get_min_max_from_dict():
     input2 = {"oreo": 3}
 
     output1 = ("apple", "orange")
-    output2 = {"oreo", "oreo"}
+    output2 = ("oreo", "oreo")
 
-    assert get_min_max_freq_from_dict(input1), output1
-    assert get_min_max_freq_from_dict(input2), output2
+    assert get_min_max_freq_from_dict(input1) == output1
+    assert get_min_max_freq_from_dict(input2) == output2
