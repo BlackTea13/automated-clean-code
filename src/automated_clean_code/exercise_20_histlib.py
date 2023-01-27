@@ -22,7 +22,7 @@ def find_freq_from_list(lines: Iterable[str]) -> Dict:
     return frequencies
 
 
-def get_min_max_freq_from_dict(dictionary: Dict) -> Tuple[str, str]:
+def get_min_max_freq_from_dict(dictionary: Dict) -> Tuple[str, str] | None:
     """Find keys with min and max values from a dictionary.
 
     Args:a
@@ -31,6 +31,8 @@ def get_min_max_freq_from_dict(dictionary: Dict) -> Tuple[str, str]:
     Returns:
       (Tuple[str, str]). A tuple of the min and max key
     """
+    if len(dictionary.keys()) == 0:
+        return None
     return max(dictionary, key=dictionary.get), min(dictionary, key=dictionary.get)
 
 
